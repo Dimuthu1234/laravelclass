@@ -11,6 +11,11 @@
 |
 */
 
+
+Route::model('blog', 'App\Blog');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +23,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/blog', 'BlogsController', resourceNames('blog'));
