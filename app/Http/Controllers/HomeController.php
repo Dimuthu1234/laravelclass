@@ -25,14 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function blog()
-    {
-        return view('blog.index');
-    }
 }

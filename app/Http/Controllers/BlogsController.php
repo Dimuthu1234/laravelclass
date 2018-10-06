@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class BlogsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,9 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        //
+       $blogs = Blog::all();
+        return view('blog.index')
+        ->withBlogs($blogs);
     }
 
     /**
@@ -24,7 +27,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        //
+        return view('blog.create');
     }
 
     /**
