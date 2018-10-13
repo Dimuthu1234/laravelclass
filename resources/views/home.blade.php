@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! >>> <a href="{{ route('blog.index') }}">Go to the blog Page</a>
                 </div>
             </div>
         </div>

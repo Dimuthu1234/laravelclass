@@ -23,6 +23,11 @@
                             <div class="col-md-9">
                                 <h4>
                                     <small>RECENT POSTS</small>
+                                    <div class="pull-right">
+                                        <button>
+                                            <a style="color: #fff; text-underline-mode: off" href="{{ route('blog.create') }}">Add a Blog</a>
+                                        </button>
+                                    </div>
                                 </h4>
                                 <hr>
 
