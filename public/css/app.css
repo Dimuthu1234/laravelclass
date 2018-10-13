@@ -10466,6 +10466,12 @@ a.text-dark:focus {
   }
 }
 
+input {
+  background: #f7f7f7 !important;
+  border: 0px solid !important;
+  border-radius: 0px !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
