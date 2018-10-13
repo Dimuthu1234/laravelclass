@@ -19,7 +19,7 @@
                                 </div>
 
                         </div>
-
+<hr>
                             <div class="col-md-9">
                                 <h4>
                                     <small>RECENT POSTS</small>
