@@ -1,29 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-<head> <h3>Blog add page</h3> </head>
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"><h3>Blog add page</h3></div>
 
-<body>
-	<div>
-	<form>
-   <div class="form-group">
-    <div class ="col-xs-2">
-    <label for="formGroupExampleInput">ID</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter ID">
-     </div>
-     <div class ="col-xs-2">
-    <label for="formGroupExampleInput">Title</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Title">
+                <div class="card-body">
+                    <form method="POST" action="{{ route('blog.store') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-2 col-form-label text-md-right">Title</label>
+
+                            <div class="col-md-10">
+                                <input id="" type="text" class="form-control" name="title" required autofocus>                          
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-2 col-form-label text-md-right">Description</label>
+
+                            <div class="col-md-10">
+                                <textarea id="" type="text" class="form-control" name="body" style="height: 200px" required ></textarea>                          
+                            </div>
+                        </div>                                  
+                        <div class="form-group row mb-0">
+                            <div class="col-md-10 offset-md-2 pull-right">
+                                <button type="submit" class="btn btn-primary">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class ="col-xs-2">
-     <label for="exampleFormControlTextarea1">Content</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="50"></textarea>
-   </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
-</body>
+
 
 @endsection

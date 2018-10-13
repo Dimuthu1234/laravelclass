@@ -1,0 +1,65 @@
+input{
+  background: rgba(43, 43, 43, 0.15) !important;
+  border: 0px solid !important;
+  border-radius: 0px !important;
+  outline: none !important;
+
+  &:hover{
+    background: #f7f7f7 !important;
+    border: 0px solid !important;
+    border-radius: 0px !important;
+    outline: none !important;
+
+  }
+
+  &:focus{
+    background: #f7f7f7  !important;
+    border: 0px solid !important;
+    border-radius: 0px !important;
+    outline: none !important;
+  }
+}
+
+textarea{
+  background: rgba(43, 43, 43, 0.15) !important;
+  border: 0px solid !important;
+  border-radius: 0px !important;
+  outline: none !important;
+
+  &:hover{
+    background: #f7f7f7 !important;
+    border: 0px solid !important;
+    border-radius: 0px !important;
+    outline: none !important;
+
+  }
+
+  &:focus{
+    background: #f7f7f7  !important;
+    border: 0px solid !important;
+    border-radius: 0px !important;
+    outline: none !important;
+  }
+}
+
+button{
+  background: #3835f7 !important;
+  border: 0px solid !important;
+  border-radius: 0px !important;
+  outline: none !important;
+
+  &:hover{
+    background: rgba(56, 53, 247, 0.63) !important;
+    border: 0px solid !important;
+    border-radius: 0px !important;
+    outline: none !important;
+
+  }
+
+  &:focus{
+    background: rgba(56, 53, 247, 0.63) !important;
+    border: 0px solid !important;
+    border-radius: 0px !important;
+    outline: none !important;
+  }
+}
