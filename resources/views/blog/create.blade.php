@@ -12,6 +12,7 @@
                     <form method="POST" action="{{ route('blog.store') }}">
                         @csrf
 
+                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label text-md-right">Title</label>
 
