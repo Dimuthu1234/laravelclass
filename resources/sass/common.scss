@@ -1,11 +1,11 @@
 input{
-  background: #f7f7f7 !important;
+  background: rgba(43, 43, 43, 0.15) !important;
   border: 0px solid !important;
   border-radius: 0px !important;
   outline: none !important;
 
   &:hover{
-    background: rgba(43, 43, 43, 0.15) !important;
+    background: #f7f7f7 !important;
     border: 0px solid !important;
     border-radius: 0px !important;
     outline: none !important;
@@ -13,7 +13,7 @@ input{
   }
 
   &:focus{
-    background: rgba(43, 43, 43, 0.15) !important;
+    background: #f7f7f7  !important;
     border: 0px solid !important;
     border-radius: 0px !important;
     outline: none !important;
@@ -21,13 +21,13 @@ input{
 }
 
 textarea{
-  background: #f7f7f7 !important;
+  background: rgba(43, 43, 43, 0.15) !important;
   border: 0px solid !important;
   border-radius: 0px !important;
   outline: none !important;
 
   &:hover{
-    background: rgba(43, 43, 43, 0.15) !important;
+    background: #f7f7f7 !important;
     border: 0px solid !important;
     border-radius: 0px !important;
     outline: none !important;
@@ -35,7 +35,7 @@ textarea{
   }
 
   &:focus{
-    background: rgba(43, 43, 43, 0.15) !important;
+    background: #f7f7f7  !important;
     border: 0px solid !important;
     border-radius: 0px !important;
     outline: none !important;

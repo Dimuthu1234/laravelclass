@@ -10467,42 +10467,42 @@ a.text-dark:focus {
 }
 
 input {
-  background: #f7f7f7 !important;
+  background: rgba(43, 43, 43, 0.15) !important;
   border: 0px solid !important;
   border-radius: 0px !important;
   outline: none !important;
 }
 
 input:hover {
-  background: rgba(43, 43, 43, 0.15) !important;
-  border: 0px solid !important;
-  border-radius: 0px !important;
-  outline: none !important;
-}
-
-input:focus {
-  background: rgba(43, 43, 43, 0.15) !important;
-  border: 0px solid !important;
-  border-radius: 0px !important;
-  outline: none !important;
-}
-
-textarea {
   background: #f7f7f7 !important;
   border: 0px solid !important;
   border-radius: 0px !important;
   outline: none !important;
 }
 
-textarea:hover {
+input:focus {
+  background: #f7f7f7  !important;
+  border: 0px solid !important;
+  border-radius: 0px !important;
+  outline: none !important;
+}
+
+textarea {
   background: rgba(43, 43, 43, 0.15) !important;
   border: 0px solid !important;
   border-radius: 0px !important;
   outline: none !important;
 }
 
+textarea:hover {
+  background: #f7f7f7 !important;
+  border: 0px solid !important;
+  border-radius: 0px !important;
+  outline: none !important;
+}
+
 textarea:focus {
-  background: rgba(43, 43, 43, 0.15) !important;
+  background: #f7f7f7  !important;
   border: 0px solid !important;
   border-radius: 0px !important;
   outline: none !important;
