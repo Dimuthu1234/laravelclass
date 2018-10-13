@@ -9,7 +9,7 @@
                     <br>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-3" style="margin-top: 3%">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search Blog.."><br>
 
@@ -19,8 +19,8 @@
                                 </div>
 
                         </div>
-<hr>
-                            <div class="col-md-9">
+
+                            <div class="col-md-9" style="margin-top: 3%">
                                 <h4>
                                     <small>RECENT POSTS</small>
                                     <div class="pull-right">
