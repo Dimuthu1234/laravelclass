@@ -23,4 +23,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/blog', 'BlogsController', resourceNames('blog'));
+Route::resource('/blog', 'BlogsController', resourceNames('blog'))->middleware('auth');
