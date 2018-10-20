@@ -30,15 +30,16 @@
                         </div>                                  
                         <div class="form-group row mb-0">
                             <div class="col-md-10 offset-md-2 pull-right">
-                                <button type="submit" class="btn btn-primary">
-                                    Save
-                                </button>
+
 
 
                                 <input type='file' onchange="readURL(this);" />
                                 <br>
                                 <img id="blah" src="http://placehold.it/180" style="width: 180px;height: 180px" alt="your image" />
-
+                                <br>
+                                <button type="submit" class="btn btn-primary">
+                                    Save
+                                </button>
                     {{--</form>--}}
 
 
