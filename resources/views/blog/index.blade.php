@@ -52,7 +52,9 @@
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <h2>{{ $blog->title }}</h2>
-                                                <h5><span class="glyphicon glyphicon-time"></span> Post by {{ $blog->blogAuthor->name }}, {{ \Carbon\Carbon::parse($blog->created_at)->format('M, d, Y') }}.</h5>
+                                                <h5><span class="glyphicon glyphicon-time"></span>
+                                                    {{--Post by {{ $blog->blogAuthor->name }}, --}}
+                                                    {{ \Carbon\Carbon::parse($blog->created_at)->format('M, d, Y') }}.</h5>
 
                                                 <p>{{ $blog->body }}</p>
                                                 <br>
