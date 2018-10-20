@@ -33,6 +33,16 @@
                                 <button type="submit" class="btn btn-primary">
                                     Save
                                 </button>
+
+
+                                <input type='file' onchange="readURL(this);" />
+                                <br>
+                                <img id="blah" src="http://placehold.it/180" style="width: 180px;height: 180px" alt="your image" />
+
+                    {{--</form>--}}
+
+
+
                             </div>
                         </div>
                     </form>
@@ -44,3 +54,21 @@
 
 
 @endsection
+
+@push('scripts')
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
+@endpush
