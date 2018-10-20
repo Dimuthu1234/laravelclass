@@ -9,8 +9,10 @@
                 <div class="card-header"><h3>Blog add page</h3></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('blog.store') }}">
-                        @csrf
+{{--                    <form method="POST" action="{{ route('blog.store') }}">--}}
+                        {!! Form::open(['files' => true, 'route' => 'blog.store', 'class' => 'form-horizontal', 'method' => 'POST']) !!}
+
+                        {{--@csrf--}}
 
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         <div class="form-group row">
@@ -33,7 +35,7 @@
 
 
 
-                                <input type='file' onchange="readURL(this);" />
+                                <input type='file' name="image" onchange="readURL(this);" />
                                 <br>
                                 <img id="blah" src="http://placehold.it/180" style="width: 180px;height: 180px" alt="your image" />
                                 <br>
@@ -46,7 +48,8 @@
 
                             </div>
                         </div>
-                    </form>
+                        {!! Form::close() !!}
+                    {{--</form>--}}
                 </div>
             </div>
         </div>

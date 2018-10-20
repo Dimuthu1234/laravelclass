@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+
+use Session;
 use Illuminate\Http\Request;
 
 class BlogsController extends Controller
@@ -38,7 +40,18 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        $blog = Blog::create($request->all());
+        $input = $request->all();
+        if ($request->hasFile('image')){
+            $name = $input['title'];
+            $formtedName = str_replace([' ','%'], '-', $name);
+
+            $imageName = $formtedName . '-' . (string) rand(00000, 99999)  . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'/images/blog', $imageName);
+            $input['image'] = $imageName;
+        }
+        $blog = Blog::create($input);
+
+        Session::flash('success','Blog has been added !');
         return redirect()->route('blog.index');
     }
 
@@ -50,7 +63,8 @@ class BlogsController extends Controller
      */
     public function show(Blog $blog)
     {
-        //
+        return view('blog.show')
+            ->with('blog', $blog);
     }
 
     /**

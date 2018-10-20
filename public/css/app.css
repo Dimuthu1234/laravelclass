@@ -13584,6 +13584,11 @@ button:focus {
   outline: none !important;
 }
 
+.glyphicon glyphicon-paperclip {
+  background-color: #ffffff;
+  border-bottom-width: thick;
+}
+
 .btnsearch {
   color: white;
   padding: 0px 20px 0px 20px;
@@ -13595,6 +13600,59 @@ button:focus {
   background: rgba(27, 75, 114, 0.67);
   color: #fff;
   padding: 4px;
+}
+
+.img {
+  max-width: 180px;
+}
+
+.input[type=file] {
+  padding: 10px;
+  background: #2d2d2d;
+}
+
+.success-alert {
+  border: 1px solid green;
+  text-align: center;
+  padding: 1%;
+  margin-bottom: 2%;
+  background: #008000;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  border-radius: 15px;
+  margin: 40% 0% 0% 74%;
+}
+
+.danger-alert {
+  border: 1px solid red;
+  text-align: center;
+  padding: 1%;
+  margin-bottom: 2%;
+  background: red;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  border-radius: 15px;
+  margin: 40% 0% 0% 74%;
+}
+
+.blog-v {
+  border: 1px solid #6686a0;
+  padding: 3%;
+  margin-top: 2%;
+  background: #80808045;
+  border-radius: 12px;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.pagi {
+  margin-top: 2%;
 }
 
 .navbar-laravel {
