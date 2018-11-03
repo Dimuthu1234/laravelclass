@@ -2,17 +2,17 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <li>{{ $blog->id }}</li>
-                <li>{{ $blog->title }}</li>
-                <li>{{ $blog->body }}</li>
-                <img src="{{ url('images/blog/'.$blog->image) }}" style="width: 500px; height: 400px; margin-top: 3%">
-            </div>
+
+    <div class ="container">
+    <div class="card text-white bg-secondary mb-3" style="width: 50rem;">
+        <img class="card-img-top" src="{{ url('images/blog/'.$blog->image) }}" alt="Card image cap">
+        <div class="card-body">
+            <h5>{{ $blog->id }}</h5>
+            <h5 class="card-title">{{ $blog->title }}</h5>
+            <p class="card-text">{{ $blog->body }}</p>
         </div>
     </div>
-
+    </div>
 
 @endsection
 
