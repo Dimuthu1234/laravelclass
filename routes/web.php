@@ -17,7 +17,9 @@ Route::model('blog', 'App\Blog');
 
 
 Route::get('/', function () {
-    return view('welcome');
+    $blogs = \App\Blog::paginate(4);
+    return view('welcome')
+        ->with('blogs', $blogs);
 });
 
 Auth::routes();
