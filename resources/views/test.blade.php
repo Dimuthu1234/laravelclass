@@ -1,6 +1,9 @@
-@extends('layouts.main')
+<!DOCTYPE html>
+<html lang="en">
+@include('shared._head')
+<body>
 
-@section('content')
+@include('shared._header')
 
 <!-- section -->
 <div class="section">
@@ -515,5 +518,9 @@
     <!-- /container -->
 </div>
 <!-- /section -->
+@include('shared._footer')
 
-@endsection
+@include('shared._script')
+
+</body>
+</html>

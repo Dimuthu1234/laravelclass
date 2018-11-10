@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use Auth;
 
 use Session;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-       $blogs = Blog::orderBy('id','desc')->paginate(5);
+       $blogs = Blog::orderBy('id','desc')->where('user_id', Auth::user()->id)->paginate(5);
         return view('blog.index')
         ->withBlogs($blogs);
     }

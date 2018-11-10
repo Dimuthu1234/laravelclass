@@ -17,7 +17,7 @@ Route::model('blog', 'App\Blog');
 
 
 Route::get('/', function () {
-    $blogs = \App\Blog::paginate(4);
+    $blogs = \App\Blog::orderBy('id', 'DESC')->paginate(4);
     return view('welcome')
         ->with('blogs', $blogs);
 });

@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
 
-
+<div class ="section">
     <div class ="container">
     <div class="card text-white bg-secondary mb-3" style="width: 50rem;">
         <img class="card-img-top" src="{{ url('images/blog/'.$blog->image) }}" alt="Card image cap">
@@ -13,6 +13,7 @@
         </div>
     </div>
     </div>
+</div>
 
 @endsection
 
