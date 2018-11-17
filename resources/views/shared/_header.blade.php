@@ -34,7 +34,9 @@
                     <li><a href="{{route('register')}}">Register</a></li>
                     @else
                     <div class="dropdown">
+                        <a href="{{ route('blog.index') }}">
   <button class="dropbtn">{{ str_limit(Auth::user()->name, 10) }}</button>
+</a>
   <div class="dropdown-content">
       <form method="post" action="{{ route('logout') }}">
           {{ csrf_field() }}
@@ -45,6 +47,7 @@
 
 <hr>
                     <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ route('blog-category.index') }}">Blog Category</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="#">Join Us</a></li>
                     <li><a href="#">Advertisement</a></li>

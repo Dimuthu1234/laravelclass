@@ -13,6 +13,7 @@
 
 
 Route::model('blog', 'App\Blog');
+Route::model('blog', 'App\BlogCategory');
 
 
 
@@ -26,3 +27,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/blog', 'BlogsController', resourceNames('blog'))->middleware('auth');
+Route::resource('/blog-category', 'BlogCategoryController', resourceNames('blog-category'))->middleware('auth');

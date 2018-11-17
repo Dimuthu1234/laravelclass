@@ -14819,6 +14819,15 @@ textarea.input {
   padding: 10px;
 }
 
+.dateinblog {
+  text-align: center;
+  font-weight: bold;
+}
+
+.dateinblog .day {
+  font-size: 25px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
