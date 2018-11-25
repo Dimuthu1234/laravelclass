@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\BlogCategory;
+use Session;
+
 use Illuminate\Http\Request;
 
 class BlogCategoryController extends Controller
@@ -37,7 +39,9 @@ class BlogCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $blogCategory = BlogCategory::create($request->input());
+        Session::flash('success', 'blog category successfully saved!');
+        return redirect()->route('blog-category.index');
     }
 
     /**
@@ -48,7 +52,7 @@ class BlogCategoryController extends Controller
      */
     public function show(BlogCategory $blogCategory)
     {
-        return view('blogCategoty.show')
+        return view('blogCategory.show')
         ->withBlogCategory($blogCategory);
     }
 
@@ -60,7 +64,8 @@ class BlogCategoryController extends Controller
      */
     public function edit(BlogCategory $blogCategory)
     {
-        //
+        return view('blogCategory.edit')
+        ->withBlogCategory($blogCategory);
     }
 
     /**
@@ -72,7 +77,9 @@ class BlogCategoryController extends Controller
      */
     public function update(Request $request, BlogCategory $blogCategory)
     {
-        //
+        $blogCategory->update($request->input());
+        Session::flash('success', 'blog category updated successfully!');
+        return redirect()->route('blog-category.index');
     }
 
     /**
@@ -83,6 +90,8 @@ class BlogCategoryController extends Controller
      */
     public function destroy(BlogCategory $blogCategory)
     {
-        //
+        $blogCategory->delete();
+        Session::flash('success', 'blog category Deleted successfully!');
+        return redirect()->route('blog-category.index');
     }
 }

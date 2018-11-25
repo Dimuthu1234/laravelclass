@@ -438,7 +438,7 @@
                             <h2>Most Read</h2>
                         </div>
                     </div>
-                @foreach($blogs->sortBy('asc') as $blog)
+                @foreach($blogz as $blog)
                     <!-- post -->
                         <div class="col-md-12">
                             <div class="post post-row">
@@ -460,7 +460,7 @@
                       <div class="pagination">
                             <div class="col-md-12">
                             <!-- {{--<button class="primary-button center-block">Load More</button>--}} -->
-                       {{ $blogs->links() }} 
+                       {{ $blogz->links() }} 
                         </div>
                     </div>
                 </div>

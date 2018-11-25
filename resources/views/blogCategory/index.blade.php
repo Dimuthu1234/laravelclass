@@ -4,14 +4,30 @@
 
 <div class="section">
 <div class="container">
-    <div class="row">
-        <div class="row">
-            
-            <h2>Blog categories</h2>        
-        <button class="pull-left">Add Blog Category</button>
 
+<div class="row">
+@if(Session::has('success'))
+<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('success') }}</p>
+@endif
+
+ @if(Session::has('error'))
+<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('error') }}</p>
+@endif
+</div>
+
+ <div class="row">
+
+            <div class="col-md-8">
+            <h2>Blog categories</h2>                   
+            </div>
+            <div class="col-md-4">
+            <a href="{{ route('blog-category.create') }}">
+        <button class="pull-right btn btn-default">Add Blog Category</button>                        
+            </a>
+            </div>
         </div>
 
+    <div class="row">
     <table class="table">
         <thead>
             <tr>
@@ -27,9 +43,24 @@
             <tr>
                 <td>{{ $blogCategory->name }}</td>
                 <td>{{ $blogCategory->description }}</td>
-                <td><button class="actionbtn"><i class="fa fa-bars"></i></button></td>
-                <td><button class="actionbtn"><i class="fa fa-pencil"></i></td>
-                <td><button class="actionbtn"><i class="fa fa-remove"></i></td>
+                <td>
+                <a href="{{ route('blog-category.show', $blogCategory->id) }}">
+                <button class="actionbtn"><i class="fa fa-bars"></i></button>                
+                </a>
+                </td>
+                <td>
+                <a href="{{ route('blog-category.edit', $blogCategory->id) }}">
+                <button class="actionbtn"><i class="fa fa-pencil"></i>                
+                </a>
+                </td>
+                <td>
+                <form action="{{ route('blog-category.destroy', $blogCategory->id) }}" method='POST'>
+                    {{ csrf_field() }}
+                    <input type="hidden" name="_method" value="DELETE">
+                <button class="actionbtn"><i class="fa fa-remove"></i>
+
+                </form>                
+                </td>
             </tr>
             @endforeach
         </tbody>

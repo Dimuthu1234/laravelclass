@@ -13,18 +13,16 @@
 
 
 Route::model('blog', 'App\Blog');
-Route::model('blog', 'App\BlogCategory');
+Route::model('blog-category', 'App\BlogCategory');
 
 
 
-Route::get('/', function () {
-    $blogs = \App\Blog::orderBy('id', 'DESC')->paginate(4);
-    return view('welcome')
-        ->with('blogs', $blogs);
-});
+Route::get('/', 'HomeController@welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/blog', 'BlogsController', resourceNames('blog'))->middleware('auth');
 Route::resource('/blog-category', 'BlogCategoryController', resourceNames('blog-category'))->middleware('auth');
+  
+Route::get('/summer','SummernoteController@index');

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Blog;
+
 class HomeController extends Controller
 {
     /**
@@ -24,5 +26,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function welcome() {
+        $blogz = Blog::orderBy('id', 'DESC')->paginate(4);
+        return view('welcome')
+            ->with('blogz', $blogz);
     }
 }
