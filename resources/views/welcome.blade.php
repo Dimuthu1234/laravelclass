@@ -367,6 +367,8 @@
         <!-- row -->
         <div class="row">
             <div class="col-md-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.5786587726016!2d80.03599131426743!3d6.820988321527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25276948fdbfb%3A0x89acd7dba1e9a83f!2sNSBM+Green+University+Town+Hostel+Complex!5e0!3m2!1sen!2slk!4v1543649684980" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
                 <div class="section-title text-center">
                     <h2>Featured Posts</h2>
                 </div>
@@ -446,7 +448,7 @@
                                                                                alt=""></a>
                                 <div class="post-body">
                                     <div class="post-meta">
-                                        <a class="post-category cat-2" href="category.html">JavaScript</a>
+                                        <a class="post-category cat-2" style="background: #{{ $blog->categoryObject->color }}" href="category.html">{{$blog->categoryObject->name}}</a>
                                         <span class="post-date">{{ \Carbon\Carbon::parse($blog->created_at)->format('M d, Y') }}</span>
                                     </div>
                                     <h3 class="post-title"><a href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a></h3>
@@ -482,11 +484,16 @@
                     </div>
                     <div class="category-widget">
                         <ul>
-                            <li><a href="#" class="cat-1">Web Design<span>340</span></a></li>
-                            <li><a href="#" class="cat-2">JavaScript<span>74</span></a></li>
-                            <li><a href="#" class="cat-4">JQuery<span>41</span></a></li>
-                            <li><a href="#" class="cat-3">CSS<span>35</span></a></li>
+                        @foreach($blogCategories as $blogCategory)
+                            <li><a href="#" class="cat-1">{{$blogCategory->name}}<span style="background: #{{$blogCategory->color}}">{{ $blogCategory->blogs()->count() }}</span></a></li>
+                            <!-- <li><a href="#" class="cat-2">{{$blogCategory->name}}<span></span></a></li>
+                            <li><a href="#" class="cat-4">{{$blogCategory->name}}<span></span></a></li>
+                            <li><a href="#" class="cat-3">{{$blogCategory->name}}<span></span></a></li> -->
+                        @endforeach
                         </ul>
+                    </div>
+                    <div style="margin-top: 15px">
+                    {{ $blogCategories->links()}}                    
                     </div>
                 </div>
                 <!-- /catagories -->

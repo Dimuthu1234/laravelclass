@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\BlogCategory;
+
 use Auth;
 
 use Session;
@@ -30,7 +32,9 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        $blogCategories = BlogCategory::all();
+        return view('blog.create')
+        ->withBlogCategories($blogCategories);
     }
 
     /**
@@ -76,7 +80,8 @@ class BlogsController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('blog.edit')
+        ->withBlog($blog);
     }
 
     /**
@@ -88,7 +93,18 @@ class BlogsController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $input = $request->all();
+        if ($request->hasFile('image')){
+            $name = $input['title'];
+            $formtedName = str_replace([' ','%'], '-', $name);
+
+            $imageName = $formtedName . '-' . (string) rand(00000, 99999)  . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path().'/images/blog', $imageName);
+            $input['image'] = $imageName;
+        }
+        $blog->update($input);
+        Session::flash('success', 'blog  updated successfully!');
+        return redirect()->route('blog.index');
     }
 
     /**
@@ -99,6 +115,8 @@ class BlogsController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        $blog->delete();
+        Session::flash('success', 'blog Deleted successfully!');
+        return redirect()->route('blog.index');
     }
 }

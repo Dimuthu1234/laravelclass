@@ -25,7 +25,15 @@
                            <div class="col-md-10">
                                 <textarea class="form-control" name="description" required></textarea>                       
                             </div>
-                        </div>                                  
+                        </div>  
+                        <div class="form-group row">
+                            <label for="name" class="col-md-2 col-form-label text-md-right">Category Color</label>
+
+                            <div class="col-md-10">
+                                <input id=""  class="form-control jscolor" value="ab2567" name="color" required autofocus>                          
+                            </div>
+                        </div>
+                        <!-- <input class="jscolor" value="ab2567">                                 -->
                         <div class="form-group row mb-0">
                     
                         <div class="col-md-12">

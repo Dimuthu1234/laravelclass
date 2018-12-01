@@ -24,6 +24,19 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="name" class="col-md-2 col-form-label text-md-right">Category</label>
+
+                            <div class="col-md-10">
+                            <select class="form-control" name="category" required>
+                            @foreach($blogCategories as $blogCategory)
+                              <option value="{{ $blogCategory->id }}">{{ $blogCategory->name }}</option>
+                            @endforeach
+                            </select>
+                                <!-- <input id="" type="text" class="form-control" name="category" required autofocus>                           -->
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="name" class="col-md-2 col-form-label text-md-right">Description</label>
 
                             <div class="col-md-10">

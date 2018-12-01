@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Blog;
+use App\BlogCategory;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,9 @@ class HomeController extends Controller
 
     public function welcome() {
         $blogz = Blog::orderBy('id', 'DESC')->paginate(4);
+        $blogCategory = BlogCategory::orderBy('id', 'DESC')->paginate(4);
         return view('welcome')
-            ->with('blogz', $blogz);
+            ->with('blogz', $blogz)
+            ->with('blogCategories', $blogCategory);
     }
 }

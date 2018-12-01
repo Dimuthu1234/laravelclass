@@ -68,6 +68,20 @@
                                                     <button>
                                                         <a style="color: #fff; text-underline-mode: off" href="{{ route('blog.show', $blog->id) }}">Read More...</a>
                                                     </button>
+                                                    <td>
+                                                    <a href="{{ route('blog.edit',$blog->id) }}" >
+                                                    <button class="actionbtn"><i class="fa fa-pencil"></i> 
+                                                            
+                                                    </a>
+                                                    </td>
+                                                    <td>
+                                                    <form action="{{ route('blog.destroy', $blog->id) }}" method='POST'>
+                                                      {{ csrf_field() }}
+                                                    <input type="hidden" name="_method" value="DELETE">
+
+                                                    <button class="actionbtn"><i class="fa fa-remove"></i>
+                                                    </form>
+                                                    </td>
                                                 </div>
                                             </div>
                                         </div>

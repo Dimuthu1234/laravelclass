@@ -25,7 +25,16 @@
                            <div class="col-md-10">
                                 <textarea class="form-control" name="description" required>{{ $blogCategory->description }}</textarea>                       
                             </div>
-                        </div>                                  
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="name" class="col-md-2 col-form-label text-md-right">Category Color</label>
+
+                            <div class="col-md-10">
+                                <input id=""  class="form-control jscolor" value="{{$blogCategory->color}}" name="color" required autofocus>                          
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                     
                         <div class="col-md-12">
@@ -45,3 +54,4 @@
 </div>
 
 @endsection
+
